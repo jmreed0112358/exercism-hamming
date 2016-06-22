@@ -8,6 +8,30 @@ import hamming.Hamming;
 
 public class HammingTest {
     
+	@Test
+	public void test_compute_EmptyString_ThrowsException() {
+		try {
+			Hamming.compute( "", "A" );
+			fail("Supposed to catch IllegalArgumentException");
+		} catch ( IllegalArgumentException iap ) {
+			
+		} catch ( Exception e ) {
+			fail("Expected to catch IllegalArgumentException");
+		}
+	}
+	
+	@Test
+	public void test_compute_NullString_ThrowsException() {
+		try {
+			Hamming.compute( null, "A" );
+			fail("Supposed to catch NullPointerException");
+		} catch ( NullPointerException npe ) {
+			
+		} catch ( Exception e ) {
+			fail("Expected to catch NullPointerException");
+		}
+	}
+	
     @Test
     public void testNoDifferenceBetweenIdenticalStrands() {
         assertThat(Hamming.compute("A", "A"), is(0));
