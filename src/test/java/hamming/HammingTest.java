@@ -1,7 +1,10 @@
+package hamming;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import hamming.Hamming;
 
 public class HammingTest {
     
